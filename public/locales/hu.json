@@ -1,0 +1,727 @@
+{
+  "meta": {
+    "locale": "hu",
+    "restaurantName": "Ramirez Restaurant",
+    "currency": "Ft",
+    "lastUpdated": "2026-06-12"
+  },
+  "nav": {
+    "home": "Főoldal",
+    "menu": "Étlapunk",
+    "about": "Rólunk",
+    "contact": "Kapcsolat",
+    "reservation": "Foglalás"
+  },
+  "aboutUs": {
+    "title": "Rólunk",
+    "description": "A Ramirez Éttermek Siófok meghatározó gasztronómiai helyszínei, ahol a klasszikus elegancia és a modern vendéglátás találkozik. Éttermeink célja, hogy minden vendég számára különleges élményt nyújtsanak – legyen szó egy baráti ebédről, családi vacsoráról vagy akár üzleti találkozóról. Kínálatunkban a nemzetközi konyha ízei mellett a tradicionális magyar fogások is megtalálhatók, modern szemlélettel újragondolva. Gyros specialitásainkkal a keleti ízvilág kedvelőinek is kedvezünk, míg kézzel nyújtott, kemencében sült pizzáink a klasszikus olasz hangulatot idézik. Itallapunkon gondosan válogatott minőségi borok, prémium pálinkák és különleges italok várják vendégeinket. Éttermünk ideális választás családi, baráti, születésnapi vagy üzleti eseményekhez, valamint nagyobb társaságok és csoportok fogadására is."
+  },
+  "menu": {
+    "pageTitle": "Étlapunk",
+    "categories": [
+      {
+        "name": "Levesek",
+        "slug": "soups",
+        "items": [
+          {
+            "name": "Tanyasi tyúkhúsleves",
+            "price": "2200 Ft"
+          },
+          {
+            "name": "Fokhagymakrémleves cipóban",
+            "price": "2480 Ft"
+          },
+          {
+            "name": "Alföldi gulyásleves",
+            "price": "2790 Ft"
+          },
+          {
+            "name": "Gulyásleves",
+            "price": "2790 Ft"
+          },
+          {
+            "name": "Eper krémleves vaníliafagyival",
+            "price": "2490 Ft"
+          },
+          {
+            "name": "Legényfogó leves",
+            "price": "2680 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Konyhafőnök ajánlata",
+        "slug": "chef-s-recommendation",
+        "items": [
+          {
+            "name": "Csirkemell sajtkéregben fűszernövényekkel, pestós burgonyapürével",
+            "price": "4890 Ft"
+          },
+          {
+            "name": "Egész pisztráng amerikai bundában, Marsal saláta vajas petrezselymes burgonyával",
+            "price": "5980 Ft"
+          },
+          {
+            "name": "Tigrisrák burgonyapürével és Taisun szósszal",
+            "price": "5990 Ft"
+          },
+          {
+            "name": "Bélszínszeletek Dijon mustárban, vajas újburgonya, zöld spárga",
+            "price": "6280 Ft"
+          },
+          {
+            "name": "Sült békacomb belga szósszal és sült burgonyával",
+            "price": "5250 Ft"
+          },
+          {
+            "name": "Báránycsonk steak burgonyával",
+            "price": "7280 Ft"
+          },
+          {
+            "name": "Borjúcsülök steak burgonyával",
+            "price": "9400 Ft"
+          },
+          {
+            "name": "Sertéscsülök steak burgonyával (2 személyes)",
+            "price": "6600 Ft"
+          },
+          {
+            "name": "Gourmet vegyes saláta bélszíncsíkokkal",
+            "price": "5890 Ft"
+          },
+          {
+            "name": "Tanyasi libacomb kandírozott gyümölcsökkel és libazsírban enyhén sült burgonyával",
+            "price": "6250 Ft"
+          },
+          {
+            "name": "Csirkemell steak füstölt barackos sajt szósszal, burgonyakrokettával",
+            "price": "5670 Ft"
+          },
+          {
+            "name": "Vadszelet argentín zöldborsó feltéttel, steak burgonyával",
+            "price": "6490 Ft"
+          },
+          {
+            "name": "Ropogós malac sült szalonnás-hagymás burgonyával",
+            "price": "5200 Ft"
+          },
+          {
+            "name": "Pontyérme mustáros fűszerkéregben grillezett zöldségekkel",
+            "price": "5490 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Kemencés ételeink",
+        "slug": "oven-baked-dishes",
+        "items": [
+          {
+            "name": "Vadlakoma a séf ajánlásával",
+            "price": "6200 Ft"
+          },
+          {
+            "name": "Ropogós fokhagymás oldalas",
+            "price": "4280 Ft"
+          },
+          {
+            "name": "Sült kacsa párolt káposztával és almával",
+            "price": "5660 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Steakek",
+        "slug": "steaks",
+        "items": [
+          {
+            "name": "Beef Steak á la Holstein",
+            "price": "5990 Ft"
+          },
+          {
+            "name": "Steak with onions",
+            "price": "6300 Ft"
+          },
+          {
+            "name": "Beef Steak with four pepper souce",
+            "price": "6450 Ft"
+          },
+          {
+            "name": "Beef steak with mushroom sauce",
+            "price": "6500 Ft"
+          },
+          {
+            "name": "Beef steak with grilled vegetables",
+            "price": "6800 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Halak",
+        "slug": "fish",
+        "items": [
+          {
+            "name": "Fischerman's soup of Szeged",
+            "price": "3400 Ft"
+          },
+          {
+            "name": "Breaded catfish filet",
+            "price": "4180 Ft"
+          },
+          {
+            "name": "Carp filet in breadcrumbs",
+            "price": "3990 Ft"
+          },
+          {
+            "name": "Roasted pike perch ( /dkg )",
+            "price": "180 Ft"
+          },
+          {
+            "name": "Catfish stew with paprika served with noodles with cottage cheese",
+            "price": "5480 Ft"
+          },
+          {
+            "name": "Hekk ( / dkg )",
+            "price": "70 Ft"
+          },
+          {
+            "name": "Roasted catfish with lemon sauce",
+            "price": "4350 Ft"
+          },
+          {
+            "name": "Tasting of Fish variations",
+            "price": "15800 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Tengeri halételek",
+        "slug": "seafood",
+        "items": [
+          {
+            "name": "Tagliatelle tengeri gyümölcsökkel",
+            "price": "5200 Ft"
+          },
+          {
+            "name": "King prawns with chilli and white wine sauce and citrus salad",
+            "price": "5380 Ft"
+          },
+          {
+            "name": "Seafood paella",
+            "price": "5450 Ft"
+          },
+          {
+            "name": "Mussels in white wine sauce with garlic focaccia",
+            "price": "5400 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Egytálételek",
+        "slug": "one-pot-dishes",
+        "items": [
+          {
+            "name": "Beef stew",
+            "price": "4680 Ft"
+          },
+          {
+            "name": "Beef stew, pasta with cottage cheese",
+            "price": "5150 Ft"
+          },
+          {
+            "name": "Tripe stew",
+            "price": "3890 Ft"
+          },
+          {
+            "name": "Deergulash with blueberry",
+            "price": "4950 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Sertéshúsból készült ételek",
+        "slug": "pork-dishes",
+        "items": [
+          {
+            "name": "Grilled pork &#8221; Gypsy style &#8220;",
+            "price": "3900 Ft"
+          },
+          {
+            "name": "Grilled pork with forest mushrooms, bacon, onion ragout",
+            "price": "4290 Ft"
+          },
+          {
+            "name": "Pork Wiener Schnitzel",
+            "price": "3890 Ft"
+          },
+          {
+            "name": "Favorite of Tourists",
+            "price": "4290 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Frissensültek",
+        "slug": "freshly-roasted",
+        "items": [
+          {
+            "name": "Breaded Cheese",
+            "price": "2990 Ft"
+          },
+          {
+            "name": "Dried plumps stuffed camambert cheese",
+            "price": "3400 Ft"
+          },
+          {
+            "name": "Deep fried mushroom",
+            "price": "2990 Ft"
+          },
+          {
+            "name": "Sunday chicken breast",
+            "price": "3600 Ft"
+          },
+          {
+            "name": "Turkey breast filled with cheese and ham",
+            "price": "3900 Ft"
+          },
+          {
+            "name": "Grilled turkey breast fillet",
+            "price": "3680 Ft"
+          },
+          {
+            "name": "Chicken breast with creamy mushroom sauce",
+            "price": "4250 Ft"
+          },
+          {
+            "name": "Fired sesame chicken stripes",
+            "price": "4500 Ft"
+          },
+          {
+            "name": "Shashlik",
+            "price": "3500 Ft"
+          },
+          {
+            "name": "Chicken shashlik",
+            "price": "3690 Ft"
+          },
+          {
+            "name": "Breaded chicken legs",
+            "price": "3990 Ft"
+          },
+          {
+            "name": "Meat platter á la Ramirez ( for 2 persons )",
+            "price": "20500 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Könnyed ételek a Chef ajánlásával",
+        "slug": "light-dishes-by-the-chef",
+        "items": [
+          {
+            "name": "Piquant cold pasta salad with sautéed prawns",
+            "price": "3990 Ft"
+          },
+          {
+            "name": "Salad with honey, mustard and dill, smoked salamon rose and cheese pie",
+            "price": "4200 Ft"
+          },
+          {
+            "name": "Grilled heart salad with chicken strips and Ramirez vinaigrette",
+            "price": "3600 Ft"
+          },
+          {
+            "name": "Caprese Al Ramirez",
+            "price": "3490 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Tészták",
+        "slug": "pasta",
+        "items": [
+          {
+            "name": "Spagetti Bolognese",
+            "price": "2800 Ft"
+          },
+          {
+            "name": "Spagetti Carbonara",
+            "price": "2800 Ft"
+          },
+          {
+            "name": "Tagliatelle with creamy chicken and wild mushroom",
+            "price": "3990 Ft"
+          },
+          {
+            "name": "Cottage cheese noodles",
+            "price": "2690 Ft"
+          },
+          {
+            "name": "Chicken breast stripes Hawaii style and farfalle pasta",
+            "price": "3880 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Saláták",
+        "slug": "salads",
+        "items": [
+          {
+            "name": "Görög saláta",
+            "price": "2800 Ft"
+          },
+          {
+            "name": "Caesar Salad with chicken / Tuna",
+            "price": "2750 Ft"
+          },
+          {
+            "name": "Season Salad",
+            "price": "2200 Ft"
+          },
+          {
+            "name": "Pickled cucumber",
+            "price": "900 Ft"
+          },
+          {
+            "name": "Pickled cucumbers",
+            "price": "900 Ft"
+          },
+          {
+            "name": "Tomato Salad",
+            "price": "900 Ft"
+          },
+          {
+            "name": "Homemade cabbage",
+            "price": "900 Ft"
+          },
+          {
+            "name": "Yellow pepper",
+            "price": "900 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Mártások",
+        "slug": "sauces",
+        "items": [
+          {
+            "name": "Ketchup",
+            "price": "400 Ft"
+          },
+          {
+            "name": "Mayonnaise",
+            "price": "400 Ft"
+          },
+          {
+            "name": "Tartar sauce",
+            "price": "650 Ft"
+          },
+          {
+            "name": "Cream and mushroom sauce",
+            "price": "750 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Köretek",
+        "slug": "side-dishes",
+        "items": [
+          {
+            "name": "Jasmine Rice",
+            "price": "850 Ft"
+          },
+          {
+            "name": "French Fries",
+            "price": "850 Ft"
+          },
+          {
+            "name": "Potato with parsley",
+            "price": "850 Ft"
+          },
+          {
+            "name": "Boiled potato",
+            "price": "850 Ft"
+          },
+          {
+            "name": "Croquett",
+            "price": "850 Ft"
+          },
+          {
+            "name": "Steamed mixed vegetables",
+            "price": "950 Ft"
+          },
+          {
+            "name": "Potato loop",
+            "price": "850 Ft"
+          },
+          {
+            "name": "Steak burgonya",
+            "price": "850 Ft"
+          },
+          {
+            "name": "Grill mixed vegetables",
+            "price": "950 Ft"
+          },
+          {
+            "name": "Bread ( / slice )",
+            "price": "50 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Desszertek",
+        "slug": "desserts",
+        "items": [
+          {
+            "name": "Pannacotta with strawberry and basil",
+            "price": "2550 Ft"
+          },
+          {
+            "name": "Chestnut cream with rum and chocolate sauce",
+            "price": "2100 Ft"
+          },
+          {
+            "name": "Pancake filled with jam",
+            "price": "1400 Ft"
+          },
+          {
+            "name": "Pancake filled with cocoa",
+            "price": "1400 Ft"
+          },
+          {
+            "name": "Pancake filled with Nutella",
+            "price": "1400 Ft"
+          },
+          {
+            "name": "Pancake filled with sweet cottage cheese",
+            "price": "1400 Ft"
+          },
+          {
+            "name": "Noodles ,,Somló&#8221; style",
+            "price": "2400 Ft"
+          },
+          {
+            "name": "Wrapping",
+            "price": "150 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Gyros",
+        "slug": "gyros",
+        "items": [
+          {
+            "name": "Gyros",
+            "price": "1850 Ft"
+          },
+          {
+            "name": "Tortilla",
+            "price": "1950 Ft"
+          },
+          {
+            "name": "Extra Arabic Gyros",
+            "price": "2850 Ft"
+          },
+          {
+            "name": "Gyros dish",
+            "price": "2850 Ft"
+          },
+          {
+            "name": "Gyros dish with French fries",
+            "price": "3250 Ft"
+          },
+          {
+            "name": "Gyros dish with Rice",
+            "price": "3250 Ft"
+          },
+          {
+            "name": "Falafel",
+            "price": "1650 Ft"
+          },
+          {
+            "name": "Falafel dish",
+            "price": "2850 Ft"
+          },
+          {
+            "name": "Gyros pita baked in owen",
+            "price": "1950 Ft"
+          },
+          {
+            "name": "Gyros pita baked in owen",
+            "price": "3750 Ft"
+          },
+          {
+            "name": "Gyros BOX",
+            "price": "1750 Ft"
+          },
+          {
+            "name": "Döner Al Ramirez",
+            "price": "2150 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Pizzák",
+        "slug": "pizzas",
+        "items": [
+          {
+            "name": "Pizza Margarita",
+            "price": "2200 Ft"
+          },
+          {
+            "name": "Pizza Funghi",
+            "price": "2350 Ft"
+          },
+          {
+            "name": "Pizza Prosciutto",
+            "price": "2400 Ft"
+          },
+          {
+            "name": "Pizza Salami",
+            "price": "2050 Ft"
+          },
+          {
+            "name": "Pizza Dallas",
+            "price": "2200 Ft"
+          },
+          {
+            "name": "Pizza Capricciosa",
+            "price": "2550 Ft"
+          },
+          {
+            "name": "Pizza Pietro",
+            "price": "2700 Ft"
+          },
+          {
+            "name": "Pizza Piccante",
+            "price": "2700 Ft"
+          },
+          {
+            "name": "Pizza Hawaii",
+            "price": "2700 Ft"
+          },
+          {
+            "name": "Pizza Palermo",
+            "price": "2700 Ft"
+          },
+          {
+            "name": "Quattro Formaggi",
+            "price": "3400 Ft"
+          },
+          {
+            "name": "Pizza Vegetarian",
+            "price": "3400 Ft"
+          },
+          {
+            "name": "Pizza Rimini",
+            "price": "3850 Ft"
+          },
+          {
+            "name": "Pizza Gyros",
+            "price": "3900 Ft"
+          },
+          {
+            "name": "Török Pizza",
+            "price": "3990 Ft"
+          },
+          {
+            "name": "Pizza Mexico",
+            "price": "3650 Ft"
+          },
+          {
+            "name": "Pizza Alcapone",
+            "price": "4250 Ft"
+          },
+          {
+            "name": "Pizza Ungherese",
+            "price": "3850 Ft"
+          },
+          {
+            "name": "Pizza Frutti de mare",
+            "price": "4650 Ft"
+          },
+          {
+            "name": "Pizza Transylvania",
+            "price": "4250 Ft"
+          },
+          {
+            "name": "Pizza Karpathian",
+            "price": "4550 Ft"
+          },
+          {
+            "name": "Pizza Avanti",
+            "price": "4350 Ft"
+          },
+          {
+            "name": "Pizza Lido",
+            "price": "3750 Ft"
+          },
+          {
+            "name": "Pizza Siciliana",
+            "price": "3850 Ft"
+          },
+          {
+            "name": "Calzone (stuffed pizza)",
+            "price": "3400 Ft"
+          },
+          {
+            "name": "BBQ (Barbecue)",
+            "price": "3650 Ft"
+          },
+          {
+            "name": "Pizza Family 50 cm",
+            "price": "7900 Ft"
+          },
+          {
+            "name": "Pizza with 4 different toppings, 40cm",
+            "price": "5500 Ft"
+          }
+        ]
+      }
+    ],
+    "disclaimer": "A végszámlához 12% szervizdíj kerül felszámításra.",
+    "originalMenusTitle": "Eredeti étlapjaink"
+  },
+  "hero": {
+    "headline": "Klasszikus Elegancia Siófok Kikötőjének Szívében",
+    "subtitle": "Üdvözöljük a Ramirezben — ahol az autentikus ízek, a meleg vendégszeretet és a lélegzetelállító balatoni panoráma felejthetetlen gasztronómiai élményt teremt.",
+    "viewMenu": "Étlap Megtekintése",
+    "bookTable": "Asztalfoglalás"
+  },
+  "booking": {
+    "title": "Asztalfoglalás",
+    "subtitle": "Foglalja le helyét a Ramirezben. Szeretettel várjuk!",
+    "name": "Teljes Név",
+    "email": "E-mail Cím",
+    "phone": "Telefonszám",
+    "guests": "Vendégek Száma",
+    "date": "Dátum",
+    "time": "Kívánt Időpont",
+    "submit": "Foglalás Kérése",
+    "submitting": "Küldés...",
+    "successTitle": "Foglalás Elküldve!",
+    "successMessage": "Köszönjük! Megkaptuk foglalási kérelmét. Csapatunk hamarosan e-mailben visszaigazolja a foglalást.",
+    "successBack": "Új Foglalás",
+    "errorMessage": "Hiba történt. Kérjük, próbálja újra, vagy hívjon minket közvetlenül.",
+    "required": "Kötelező",
+    "selectRestaurant": "Válasszon éttermet"
+  },
+  "footer": {
+    "tagline": "Klasszikus Elegancia Siófok Kikötőjének Szívében",
+    "hours": "Nyitvatartás",
+    "hoursValue": "Naponta: 09:00 – 24:00",
+    "address": "Cím",
+    "addressValue": "Siófok, Petőfi sétány 3, 8600 Magyarország",
+    "contact": "Kapcsolat",
+    "directions": "Útvonaltervezés",
+    "rights": "Minden jog fenntartva.",
+    "madeWith": "Szeretettel készítve a Balaton partján"
+  },
+  "branches": {
+    "premium": "Ramirez Premium - 8600 Siófok, Fő u. 43.",
+    "etterem": "Ramirez Étterem - Siófok, Mártírok útja 15.",
+    "halaszle": "Ramirez Halászlé és Sült Hal Udvar - Siófok, Petőfi Sétány 1-3. (Strand bejárat mellett)"
+  },
+  "partners": {
+    "title": "Partnereink"
+  }
+}

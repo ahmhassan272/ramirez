@@ -1,0 +1,388 @@
+/* ═══════════════════════════════════════════════════════════
+   Menu — Harbor Elegance
+   Horizontal category tabs, 2-col grid with dotted leader
+   lines, generous ivory padding, and service-charge disclaimer.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Section ───────────────────────────────────────────── */
+.section {
+  position: relative;
+  background-color: var(--color-ivory);
+  padding: var(--space-3xl) 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* ── Section Header ────────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.accentLine {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gold-light), var(--color-gold), var(--color-gold-light));
+  border-radius: 2px;
+  margin: 0 auto var(--space-lg);
+}
+
+.title {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-sm);
+}
+
+.subtitle {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  color: var(--color-navy-muted);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.originalMenusSection {
+  margin-top: 0;
+  margin-bottom: var(--space-3xl);
+  padding: var(--space-lg);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 12px var(--color-shadow);
+}
+
+.originalMenusTitle {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--color-navy);
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+.pdfDownloadWrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.pdfButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+/* ── Tabs Wrapper (scroll container) ───────────────────── */
+.tabsWrapper {
+  position: relative;
+  margin-bottom: var(--space-xl);
+}
+
+.tabs {
+  display: flex;
+  gap: var(--space-xs);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* IE/Edge */
+  padding: var(--space-sm) var(--space-sm);
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;                  /* Chrome/Safari */
+}
+
+/* Edge fade indicators for scroll affordance */
+.tabsFadeLeft,
+.tabsFadeRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tabsFadeLeft {
+  left: 0;
+  background: linear-gradient(90deg, var(--color-ivory), transparent);
+}
+
+.tabsFadeRight {
+  right: 0;
+  background: linear-gradient(270deg, var(--color-ivory), transparent);
+}
+
+/* ── Individual Tab ────────────────────────────────────── */
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.625rem 1.125rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: 100px;
+  background: var(--color-white);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-navy);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 200ms ease;
+}
+
+.tab:hover {
+  border-color: var(--color-gold-light);
+  background: var(--color-ivory-warm);
+  color: var(--color-gold-dark);
+}
+
+.tabActive {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-white);
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(200, 169, 81, 0.3);
+}
+
+.tabActive:hover {
+  background: var(--color-gold-dark);
+  border-color: var(--color-gold-dark);
+  color: var(--color-white);
+}
+
+.tabCount {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  opacity: 0.65;
+  line-height: 1;
+}
+
+.tabActive .tabCount {
+  opacity: 0.85;
+}
+
+/* ── Panel (items container) ───────────────────────────── */
+.panel {
+  animation: panelFadeIn 300ms ease-out;
+}
+
+@keyframes panelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── 2-Column Grid ─────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+/* ── Menu Item ─────────────────────────────────────────── */
+.item {
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 200ms ease;
+}
+
+.item:hover {
+  background-color: var(--color-ivory-warm);
+}
+
+/* Alternate column borders for visual separation */
+.item:nth-child(odd) {
+  border-right: 1px solid var(--color-border);
+}
+
+/* Remove bottom border from last row */
+.grid .item:nth-last-child(1),
+.grid .item:nth-last-child(2):nth-child(odd) {
+  border-bottom: none;
+}
+
+.itemContent {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  min-height: 1.8em;
+}
+
+/* ── Item Name ─────────────────────────────────────────── */
+.itemName {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-navy);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  flex-shrink: 0;
+  max-width: 70%;
+}
+
+/* ── Dotted Leader Line ────────────────────────────────── */
+.itemDots {
+  flex: 1;
+  min-width: 1.5rem;
+  margin: 0 0.5rem;
+  border-bottom: 2px dotted var(--color-gold-light);
+  align-self: baseline;
+  position: relative;
+  top: -4px;
+}
+
+/* ── Price ──────────────────────────────────────────────── */
+.itemPrice {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gold-dark);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Disclaimer ────────────────────────────────────────── */
+.disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-top: var(--space-2xl);
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-ivory-warm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+
+.disclaimerIcon {
+  flex-shrink: 0;
+  color: var(--color-gold);
+  margin-top: 2px;
+}
+
+.disclaimerText {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  color: var(--color-navy-muted);
+  line-height: 1.5;
+  font-style: italic;
+  max-width: none;
+}
+
+/* ── Loading State ─────────────────────────────────────── */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-3xl) 0;
+}
+
+.loadingDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-gold-light);
+  animation: loadingPulse 1.2s ease-in-out infinite;
+}
+
+.loadingDot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loadingDot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loadingPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Remove right border on single column */
+  .item:nth-child(odd) {
+    border-right: none;
+  }
+
+  /* Only remove bottom border from last item */
+  .grid .item:nth-last-child(2):nth-child(odd) {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .grid .item:last-child {
+    border-bottom: none;
+  }
+
+  .item {
+    padding: var(--space-md) var(--space-md);
+  }
+
+  .itemName {
+    font-size: 0.9375rem;
+    max-width: 65%;
+  }
+
+  .itemPrice {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .tab {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.875rem;
+  }
+
+  .itemName {
+    max-width: 60%;
+    font-size: 0.875rem;
+  }
+
+  .itemPrice {
+    font-size: 0.875rem;
+  }
+
+  .disclaimer {
+    padding: var(--space-sm) var(--space-md);
+  }
+}

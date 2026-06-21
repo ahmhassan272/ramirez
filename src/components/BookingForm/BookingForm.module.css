@@ -1,0 +1,261 @@
+/* ═══════════════════════════════════════════════════════════
+   BookingForm — Harbor Elegance
+   Elegant reservation form with ivory card, gold accents,
+   success state, and responsive 2-column grid.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Section ───────────────────────────────────────────── */
+.section {
+  position: relative;
+  background-color: var(--color-ivory-warm);
+  padding: var(--space-3xl) 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* ── Header ────────────────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.accentLine {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gold-light), var(--color-gold), var(--color-gold-light));
+  border-radius: 2px;
+  margin: 0 auto var(--space-lg);
+}
+
+.title {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-sm);
+}
+
+.subtitle {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1rem;
+  color: var(--color-navy-muted);
+  line-height: 1.6;
+  max-width: none;
+}
+
+/* ── Form Card ─────────────────────────────────────────── */
+.card {
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 24px var(--color-shadow);
+  padding: var(--space-2xl);
+}
+
+/* ── Grid (2-column) ───────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+/* ── Field ─────────────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.label {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.required {
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+/* ── Input & Select ────────────────────────────────────── */
+.input,
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 0.8125rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-white);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--color-navy);
+  line-height: 1.4;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--color-navy-muted);
+  opacity: 0.5;
+}
+
+.input:focus,
+.select:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(200, 169, 81, 0.12);
+}
+
+.select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%235A6A8A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+/* ── Submit Button ─────────────────────────────────────── */
+.submitBtn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 0.9375rem;
+  justify-content: center;
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Spinner ───────────────────────────────────────────── */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: var(--color-white);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Error ─────────────────────────────────────────────── */
+.error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--border-radius);
+  color: #991b1b;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+/* ── Success Card ──────────────────────────────────────── */
+.successCard {
+  text-align: center;
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 24px var(--color-shadow);
+  padding: var(--space-3xl) var(--space-2xl);
+  animation: fadeScaleIn 400ms ease-out;
+}
+
+@keyframes fadeScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.successIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(200, 169, 81, 0.12), rgba(200, 169, 81, 0.06));
+  color: var(--color-gold);
+  margin-bottom: var(--space-lg);
+}
+
+.successTitle {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: var(--space-sm);
+}
+
+.successMessage {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1rem;
+  color: var(--color-navy-muted);
+  line-height: 1.65;
+  max-width: 440px;
+  margin: 0 auto var(--space-xl);
+}
+
+.successBtn {
+  display: inline-flex;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .card {
+    padding: var(--space-lg);
+    border-radius: var(--border-radius);
+  }
+}

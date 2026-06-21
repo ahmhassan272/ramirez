@@ -1,0 +1,727 @@
+{
+  "meta": {
+    "locale": "de",
+    "restaurantName": "Ramirez Restaurant",
+    "currency": "Ft",
+    "lastUpdated": "2026-06-12"
+  },
+  "nav": {
+    "home": "Startseite",
+    "menu": "Speisekarte",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "reservation": "Reservierung"
+  },
+  "aboutUs": {
+    "title": "Über uns",
+    "description": "Die Ramirez Restaurants sind maßgebliche gastronomische Veranstaltungsorte in Siófok, an denen klassische Eleganz auf moderne Gastfreundschaft trifft. Unsere Restaurants haben es sich zum Ziel gesetzt, jedem Gast ein besonderes Erlebnis zu bieten – sei es ein Mittagessen mit Freunden, ein Familienessen oder sogar ein Geschäftstreffen. Neben den Aromen der internationalen Küche bietet unsere Speisekarte auch traditionelle ungarische Gerichte, die mit einer modernen Perspektive neu interpretiert wurden. Mit unseren Gyros-Spezialitäten richten wir uns auch an Liebhaber östlicher Aromen, während unsere handgezogenen, im Ofen gebackenen Pizzen eine klassische italienische Atmosphäre hervorrufen. Auf unserer Getränkekarte erwarten unsere Gäste sorgfältig ausgewählte Qualitätsweine, Premium-Pálinkas und besondere Getränke. Unser Restaurant ist eine ideale Wahl für Familien-, Freundes-, Geburtstags- oder Geschäftsveranstaltungen sowie für die Ausrichtung größerer Feiern und Gruppen."
+  },
+  "menu": {
+    "pageTitle": "Speisekarte",
+    "categories": [
+      {
+        "name": "Suppen",
+        "slug": "soups",
+        "items": [
+          {
+            "name": "Hühnerfleischsuppe vom Bauernhof",
+            "price": "2200 Ft"
+          },
+          {
+            "name": "Knoblauchcremesuppe im Brotlaib",
+            "price": "2480 Ft"
+          },
+          {
+            "name": "Gulasch aus der ungarischen Tiefebene",
+            "price": "2790 Ft"
+          },
+          {
+            "name": "Gulasch",
+            "price": "2790 Ft"
+          },
+          {
+            "name": "Erdbeercremesuppe mit Vanilleeis",
+            "price": "2490 Ft"
+          },
+          {
+            "name": "Jungfernsuppe",
+            "price": "2680 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Empfehlung des Küchenchefs",
+        "slug": "chef-s-recommendation",
+        "items": [
+          {
+            "name": "Hähnchenbrust in Käsekruste mit feinen Kräutern und Kartoffelpüree mit Pesto",
+            "price": "4890 Ft"
+          },
+          {
+            "name": "Ganze Forelle im Bierteig, Marsal-Salat mit Petersilienkartoffeln",
+            "price": "5980 Ft"
+          },
+          {
+            "name": "Tigergarnelen mit Kartoffelpüree und Taisun-Sauce",
+            "price": "5990 Ft"
+          },
+          {
+            "name": "Lendenschnitzel in Dijon-Senf, neue Butterkartoffeln, grüner Spargel",
+            "price": "6280 Ft"
+          },
+          {
+            "name": "Gebratene Froschschenkel mit belgischer Sauce und Bratkartoffeln",
+            "price": "5250 Ft"
+          },
+          {
+            "name": "Lammhaxe mit Steakkartoffeln",
+            "price": "7280 Ft"
+          },
+          {
+            "name": "Kalbshaxe mit Steakkartoffeln",
+            "price": "9400 Ft"
+          },
+          {
+            "name": "Schweinshaxe mit Steakkartoffeln (2 Personen)",
+            "price": "6600 Ft"
+          },
+          {
+            "name": "Gourmet-Salat mit Rinderfiletstreifen",
+            "price": "5890 Ft"
+          },
+          {
+            "name": "Gänsekeule nach Bauernart mit kandierten Früchten und in Gänsefett gebratenen Kartoffeln",
+            "price": "6250 Ft"
+          },
+          {
+            "name": "Hähnchenbrust-Steak in geräucherter Pfirsich-Käsesauce mit Kartoffelkroketten",
+            "price": "5670 Ft"
+          },
+          {
+            "name": "Wildscheiben mit argentinischem Erbsentopping und Steakkartoffeln",
+            "price": "6490 Ft"
+          },
+          {
+            "name": "Knuspriger Spanferkelbraten mit Speck-Zwiebel-Kartoffeln",
+            "price": "5200 Ft"
+          },
+          {
+            "name": "Karpfenscheibe in Senfkruste mit gegrilltem Gemüse",
+            "price": "5490 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Ofengerichte",
+        "slug": "oven-baked-dishes",
+        "items": [
+          {
+            "name": "Wildfestmahl nach Empfehlung des Küchenchefs",
+            "price": "6200 Ft"
+          },
+          {
+            "name": "Knusprige Spareribs mit Knoblauch",
+            "price": "4280 Ft"
+          },
+          {
+            "name": "Gebratene Ente mit geschmortem Kohl und Apfel",
+            "price": "5660 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Steaks",
+        "slug": "steaks",
+        "items": [
+          {
+            "name": "Beef Steak á la Holstein",
+            "price": "5990 Ft"
+          },
+          {
+            "name": "Steak with onions",
+            "price": "6300 Ft"
+          },
+          {
+            "name": "Beef Steak with four pepper souce",
+            "price": "6450 Ft"
+          },
+          {
+            "name": "Beef steak with mushroom sauce",
+            "price": "6500 Ft"
+          },
+          {
+            "name": "Beef steak with grilled vegetables",
+            "price": "6800 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Fisch",
+        "slug": "fish",
+        "items": [
+          {
+            "name": "Fischerman's soup of Szeged",
+            "price": "3400 Ft"
+          },
+          {
+            "name": "Breaded catfish filet",
+            "price": "4180 Ft"
+          },
+          {
+            "name": "Carp filet in breadcrumbs",
+            "price": "3990 Ft"
+          },
+          {
+            "name": "Roasted pike perch ( /dkg )",
+            "price": "180 Ft"
+          },
+          {
+            "name": "Catfish stew with paprika served with noodles with cottage cheese",
+            "price": "5480 Ft"
+          },
+          {
+            "name": "Hekk ( / dkg )",
+            "price": "70 Ft"
+          },
+          {
+            "name": "Roasted catfish with lemon sauce",
+            "price": "4350 Ft"
+          },
+          {
+            "name": "Tasting of Fish variations",
+            "price": "15800 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Meeresfrüchte",
+        "slug": "seafood",
+        "items": [
+          {
+            "name": "Tagliatelle mit Meeresfrüchten",
+            "price": "5200 Ft"
+          },
+          {
+            "name": "King prawns with chilli and white wine sauce and citrus salad",
+            "price": "5380 Ft"
+          },
+          {
+            "name": "Seafood paella",
+            "price": "5450 Ft"
+          },
+          {
+            "name": "Mussels in white wine sauce with garlic focaccia",
+            "price": "5400 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Eintopfgerichte",
+        "slug": "one-pot-dishes",
+        "items": [
+          {
+            "name": "Beef stew",
+            "price": "4680 Ft"
+          },
+          {
+            "name": "Beef stew, pasta with cottage cheese",
+            "price": "5150 Ft"
+          },
+          {
+            "name": "Tripe stew",
+            "price": "3890 Ft"
+          },
+          {
+            "name": "Deergulash with blueberry",
+            "price": "4950 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Schweinefleischgerichte",
+        "slug": "pork-dishes",
+        "items": [
+          {
+            "name": "Grilled pork &#8221; Gypsy style &#8220;",
+            "price": "3900 Ft"
+          },
+          {
+            "name": "Grilled pork with forest mushrooms, bacon, onion ragout",
+            "price": "4290 Ft"
+          },
+          {
+            "name": "Pork Wiener Schnitzel",
+            "price": "3890 Ft"
+          },
+          {
+            "name": "Favorite of Tourists",
+            "price": "4290 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Frisch Gebratenes",
+        "slug": "freshly-roasted",
+        "items": [
+          {
+            "name": "Breaded Cheese",
+            "price": "2990 Ft"
+          },
+          {
+            "name": "Dried plumps stuffed camambert cheese",
+            "price": "3400 Ft"
+          },
+          {
+            "name": "Deep fried mushroom",
+            "price": "2990 Ft"
+          },
+          {
+            "name": "Sunday chicken breast",
+            "price": "3600 Ft"
+          },
+          {
+            "name": "Turkey breast filled with cheese and ham",
+            "price": "3900 Ft"
+          },
+          {
+            "name": "Grilled turkey breast fillet",
+            "price": "3680 Ft"
+          },
+          {
+            "name": "Chicken breast with creamy mushroom sauce",
+            "price": "4250 Ft"
+          },
+          {
+            "name": "Fired sesame chicken stripes",
+            "price": "4500 Ft"
+          },
+          {
+            "name": "Shashlik",
+            "price": "3500 Ft"
+          },
+          {
+            "name": "Chicken shashlik",
+            "price": "3690 Ft"
+          },
+          {
+            "name": "Breaded chicken legs",
+            "price": "3990 Ft"
+          },
+          {
+            "name": "Meat platter á la Ramirez ( for 2 persons )",
+            "price": "20500 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Leichte Gerichte nach Empfehlung des Chefs",
+        "slug": "light-dishes-by-the-chef",
+        "items": [
+          {
+            "name": "Piquant cold pasta salad with sautéed prawns",
+            "price": "3990 Ft"
+          },
+          {
+            "name": "Salad with honey, mustard and dill, smoked salamon rose and cheese pie",
+            "price": "4200 Ft"
+          },
+          {
+            "name": "Grilled heart salad with chicken strips and Ramirez vinaigrette",
+            "price": "3600 Ft"
+          },
+          {
+            "name": "Caprese Al Ramirez",
+            "price": "3490 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Nudeln",
+        "slug": "pasta",
+        "items": [
+          {
+            "name": "Spaghetti Bolognese",
+            "price": "2800 Ft"
+          },
+          {
+            "name": "Spagetti Carbonara",
+            "price": "2800 Ft"
+          },
+          {
+            "name": "Tagliatelle with creamy chicken and wild mushroom",
+            "price": "3990 Ft"
+          },
+          {
+            "name": "Cottage cheese noodles",
+            "price": "2690 Ft"
+          },
+          {
+            "name": "Chicken breast stripes Hawaii style and farfalle pasta",
+            "price": "3880 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Salate",
+        "slug": "salads",
+        "items": [
+          {
+            "name": "Griechischer Salat",
+            "price": "2800 Ft"
+          },
+          {
+            "name": "Caesar Salad with chicken / Tuna",
+            "price": "2750 Ft"
+          },
+          {
+            "name": "Season Salad",
+            "price": "2200 Ft"
+          },
+          {
+            "name": "Pickled cucumber",
+            "price": "900 Ft"
+          },
+          {
+            "name": "Pickled cucumbers",
+            "price": "900 Ft"
+          },
+          {
+            "name": "Tomato Salad",
+            "price": "900 Ft"
+          },
+          {
+            "name": "Homemade cabbage",
+            "price": "900 Ft"
+          },
+          {
+            "name": "Yellow pepper",
+            "price": "900 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Soßen",
+        "slug": "sauces",
+        "items": [
+          {
+            "name": "Ketchup",
+            "price": "400 Ft"
+          },
+          {
+            "name": "Mayonnaise",
+            "price": "400 Ft"
+          },
+          {
+            "name": "Tartar sauce",
+            "price": "650 Ft"
+          },
+          {
+            "name": "Cream and mushroom sauce",
+            "price": "750 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Beilagen",
+        "slug": "side-dishes",
+        "items": [
+          {
+            "name": "Jasmine Rice",
+            "price": "850 Ft"
+          },
+          {
+            "name": "French Fries",
+            "price": "850 Ft"
+          },
+          {
+            "name": "Potato with parsley",
+            "price": "850 Ft"
+          },
+          {
+            "name": "Boiled potato",
+            "price": "850 Ft"
+          },
+          {
+            "name": "Croquett",
+            "price": "850 Ft"
+          },
+          {
+            "name": "Steamed mixed vegetables",
+            "price": "950 Ft"
+          },
+          {
+            "name": "Potato loop",
+            "price": "850 Ft"
+          },
+          {
+            "name": "Steakkartoffeln",
+            "price": "850 Ft"
+          },
+          {
+            "name": "Grill mixed vegetables",
+            "price": "950 Ft"
+          },
+          {
+            "name": "Bread ( / slice )",
+            "price": "50 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Desserts",
+        "slug": "desserts",
+        "items": [
+          {
+            "name": "Pannacotta with strawberry and basil",
+            "price": "2550 Ft"
+          },
+          {
+            "name": "Chestnut cream with rum and chocolate sauce",
+            "price": "2100 Ft"
+          },
+          {
+            "name": "Pancake filled with jam",
+            "price": "1400 Ft"
+          },
+          {
+            "name": "Pancake filled with cocoa",
+            "price": "1400 Ft"
+          },
+          {
+            "name": "Pancake filled with Nutella",
+            "price": "1400 Ft"
+          },
+          {
+            "name": "Pancake filled with sweet cottage cheese",
+            "price": "1400 Ft"
+          },
+          {
+            "name": "Noodles ,,Somló&#8221; style",
+            "price": "2400 Ft"
+          },
+          {
+            "name": "Wrapping",
+            "price": "150 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Gyros",
+        "slug": "gyros",
+        "items": [
+          {
+            "name": "Gyros",
+            "price": "1850 Ft"
+          },
+          {
+            "name": "Tortilla",
+            "price": "1950 Ft"
+          },
+          {
+            "name": "Extra Arabic Gyros",
+            "price": "2850 Ft"
+          },
+          {
+            "name": "Gyros dish",
+            "price": "2850 Ft"
+          },
+          {
+            "name": "Gyros dish with French fries",
+            "price": "3250 Ft"
+          },
+          {
+            "name": "Gyros dish with Rice",
+            "price": "3250 Ft"
+          },
+          {
+            "name": "Falafel",
+            "price": "1650 Ft"
+          },
+          {
+            "name": "Falafel dish",
+            "price": "2850 Ft"
+          },
+          {
+            "name": "Gyros pita baked in owen",
+            "price": "1950 Ft"
+          },
+          {
+            "name": "Gyros pita baked in owen",
+            "price": "3750 Ft"
+          },
+          {
+            "name": "Gyros BOX",
+            "price": "1750 Ft"
+          },
+          {
+            "name": "Döner Al Ramirez",
+            "price": "2150 Ft"
+          }
+        ]
+      },
+      {
+        "name": "Pizzen",
+        "slug": "pizzas",
+        "items": [
+          {
+            "name": "Pizza Margarita",
+            "price": "2200 Ft"
+          },
+          {
+            "name": "Pizza Funghi",
+            "price": "2350 Ft"
+          },
+          {
+            "name": "Pizza Prosciutto",
+            "price": "2400 Ft"
+          },
+          {
+            "name": "Pizza Salami",
+            "price": "2050 Ft"
+          },
+          {
+            "name": "Pizza Dallas",
+            "price": "2200 Ft"
+          },
+          {
+            "name": "Pizza Capricciosa",
+            "price": "2550 Ft"
+          },
+          {
+            "name": "Pizza Pietro",
+            "price": "2700 Ft"
+          },
+          {
+            "name": "Pizza Piccante",
+            "price": "2700 Ft"
+          },
+          {
+            "name": "Pizza Hawaii",
+            "price": "2700 Ft"
+          },
+          {
+            "name": "Pizza Palermo",
+            "price": "2700 Ft"
+          },
+          {
+            "name": "Quattro Formaggi",
+            "price": "3400 Ft"
+          },
+          {
+            "name": "Pizza Vegetarian",
+            "price": "3400 Ft"
+          },
+          {
+            "name": "Pizza Rimini",
+            "price": "3850 Ft"
+          },
+          {
+            "name": "Pizza Gyros",
+            "price": "3900 Ft"
+          },
+          {
+            "name": "Török Pizza",
+            "price": "3990 Ft"
+          },
+          {
+            "name": "Pizza Mexico",
+            "price": "3650 Ft"
+          },
+          {
+            "name": "Pizza Alcapone",
+            "price": "4250 Ft"
+          },
+          {
+            "name": "Pizza Ungherese",
+            "price": "3850 Ft"
+          },
+          {
+            "name": "Pizza Frutti de mare",
+            "price": "4650 Ft"
+          },
+          {
+            "name": "Pizza Transylvania",
+            "price": "4250 Ft"
+          },
+          {
+            "name": "Pizza Karpathian",
+            "price": "4550 Ft"
+          },
+          {
+            "name": "Pizza Avanti",
+            "price": "4350 Ft"
+          },
+          {
+            "name": "Pizza Lido",
+            "price": "3750 Ft"
+          },
+          {
+            "name": "Pizza Siciliana",
+            "price": "3850 Ft"
+          },
+          {
+            "name": "Calzone (stuffed pizza)",
+            "price": "3400 Ft"
+          },
+          {
+            "name": "BBQ (Barbecue)",
+            "price": "3650 Ft"
+          },
+          {
+            "name": "Pizza Family 50 cm",
+            "price": "7900 Ft"
+          },
+          {
+            "name": "Pizza with 4 different toppings, 40cm",
+            "price": "5500 Ft"
+          }
+        ]
+      }
+    ],
+    "disclaimer": "Auf Ihre Rechnung wird ein Serviceaufschlag von 12% erhoben.",
+    "originalMenusTitle": "Unsere Original-Speisekarten"
+  },
+  "hero": {
+    "headline": "Klassische Eleganz im Herzen des Hafens von Siófok",
+    "subtitle": "Willkommen im Ramirez — wo authentische Aromen, herzliche Gastfreundschaft und ein atemberaubender Blick auf den See ein unvergessliches Speiseerlebnis schaffen.",
+    "viewMenu": "Speisekarte Ansehen",
+    "bookTable": "Tisch Reservieren"
+  },
+  "booking": {
+    "title": "Tisch Reservieren",
+    "subtitle": "Reservieren Sie Ihren Platz im Ramirez. Wir freuen uns auf Sie.",
+    "name": "Vollständiger Name",
+    "email": "E-Mail-Adresse",
+    "phone": "Telefonnummer",
+    "guests": "Anzahl der Gäste",
+    "date": "Datum",
+    "time": "Gewünschte Uhrzeit",
+    "submit": "Reservierung Anfragen",
+    "submitting": "Wird gesendet...",
+    "successTitle": "Reservierung Angefragt!",
+    "successMessage": "Vielen Dank! Wir haben Ihre Reservierungsanfrage erhalten. Unser Team wird Ihre Reservierung in Kürze per E-Mail bestätigen.",
+    "successBack": "Neue Reservierung",
+    "errorMessage": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an.",
+    "required": "Erforderlich",
+    "selectRestaurant": "Restaurant auswählen"
+  },
+  "footer": {
+    "tagline": "Klassische Eleganz im Herzen des Hafens von Siófok",
+    "hours": "Öffnungszeiten",
+    "hoursValue": "Täglich: 09:00 – 24:00",
+    "address": "Adresse",
+    "addressValue": "Siófok, Petőfi sétány 3, 8600 Ungarn",
+    "contact": "Kontakt",
+    "directions": "Route Planen",
+    "rights": "Alle Rechte vorbehalten.",
+    "madeWith": "Mit Liebe am Ufer des Plattensees gefertigt"
+  },
+  "branches": {
+    "premium": "Ramirez Premium - 8600 Siófok, Fő u. 43.",
+    "etterem": "Ramirez Étterem - Siófok, Mártírok útja 15.",
+    "halaszle": "Ramirez Halászlé és Sült Hal Udvar - Siófok, Petőfi Sétány 1-3. (Strand bejárat mellett)"
+  },
+  "partners": {
+    "title": "Unsere Partner"
+  }
+}

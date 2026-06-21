@@ -1,0 +1,271 @@
+/* ═══════════════════════════════════════════════════════════
+   Hero — Harbor Elegance
+   Full-viewport hero with background image, gradient overlay,
+   elegant typography, and animated scroll indicator.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Hero Section ──────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ── Background ────────────────────────────────────────── */
+.bgWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.bgImage.active {
+  opacity: 1;
+}
+
+.bgImage.inactive {
+  opacity: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(27, 42, 74, 0.70) 0%,
+    rgba(27, 42, 74, 0.60) 30%,
+    rgba(27, 42, 74, 0.70) 60%,
+    rgba(27, 42, 74, 0.85) 100%
+  );
+}
+
+/* ── Content ───────────────────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  padding: calc(var(--header-height) + var(--space-3xl)) var(--space-lg) var(--space-3xl);
+}
+
+/* ── Overline ──────────────────────────────────────────── */
+.overline {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-white);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  animation: fadeSlideUp 800ms ease-out both;
+  animation-delay: 100ms;
+}
+
+@media (max-width: 768px) {
+  .overline {
+    font-size: 0.875rem;
+  }
+}
+
+/* ── Accent Line ───────────────────────────────────────── */
+.accentLine {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gold-light), var(--color-gold), var(--color-gold-light));
+  border-radius: 2px;
+  margin-bottom: var(--space-xl);
+  animation: fadeSlideUp 800ms ease-out both;
+  animation-delay: 200ms;
+}
+
+/* ── Headline ──────────────────────────────────────────── */
+.headline {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 3.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  margin-bottom: var(--space-lg);
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.25);
+  animation: fadeSlideUp 800ms ease-out both;
+  animation-delay: 400ms;
+}
+
+/* ── Subtitle ──────────────────────────────────────────── */
+.subtitle {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 580px;
+  margin-bottom: var(--space-2xl);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeSlideUp 800ms ease-out both;
+  animation-delay: 600ms;
+}
+
+/* ── Action Buttons ────────────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeSlideUp 800ms ease-out both;
+  animation-delay: 800ms;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btnIcon {
+  flex-shrink: 0;
+}
+
+.btnSecondary {
+  /* inherits from globals.css btn-hero-secondary */
+}
+
+/* ── Scroll Hint ───────────────────────────────────────── */
+.scrollHint {
+  position: absolute;
+  bottom: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeIn 1s ease-out both;
+  animation-delay: 1.4s;
+}
+
+.scrollMouse {
+  width: 24px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.scrollDot {
+  width: 3px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 2px;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* ── Keyframes ─────────────────────────────────────────── */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(8px);
+  }
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .headline {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.0625rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bgImage {
+    object-position: center top;
+  }
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  .content {
+    padding-top: calc(var(--header-height) + var(--space-2xl));
+    padding-bottom: var(--space-2xl);
+  }
+
+  .headline {
+    font-size: 2.25rem;
+    line-height: 1.15;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 420px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: var(--space-sm);
+    width: 100%;
+  }
+
+  .actions .btnPrimary,
+  .actions .btnSecondary {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline {
+    font-size: 1.875rem;
+  }
+
+  .subtitle {
+    font-size: 0.9375rem;
+  }
+
+  .accentLine {
+    width: 40px;
+  }
+}

@@ -1,0 +1,235 @@
+/* ═══════════════════════════════════════════════════════════
+   Harbor Elegance — Global Design System
+   Light-mode only. No dark mode.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Design Tokens ─────────────────────────────────────── */
+:root {
+  /* Colors */
+  --color-ivory: #FDFBF7;
+  --color-ivory-warm: #F8F4EC;
+  --color-navy: #1B2A4A;
+  --color-navy-light: #2E4066;
+  --color-navy-muted: #5A6A8A;
+  --color-gold: #C8A951;
+  --color-gold-light: #E2D1A0;
+  --color-gold-dark: #A68B3C;
+  --color-white: #FFFFFF;
+  --color-border: #E8E2D6;
+  --color-shadow: rgba(27, 42, 74, 0.08);
+  --color-shadow-strong: rgba(27, 42, 74, 0.14);
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --border-radius: 8px;
+  --border-radius-lg: 16px;
+
+  /* Header */
+  --header-height: 88px;
+}
+
+/* ── Reset & Base ──────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-ivory);
+  color: var(--color-navy);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  overflow-x: hidden;
+}
+
+/* ── Typography ────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--font-playfair), Georgia, serif;
+  color: var(--color-navy);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+p {
+  max-width: 65ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Buttons ───────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 0.75rem 1.5rem;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 150ms ease;
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  border-color: var(--color-gold);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-gold-dark);
+  border-color: var(--color-gold-dark);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+}
+
+.btn-navy {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  border-color: var(--color-navy);
+}
+
+.btn-navy:hover {
+  background-color: var(--color-navy-light);
+  border-color: var(--color-navy-light);
+}
+
+/* Hero-specific white buttons */
+.btn-hero-primary {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  border-color: var(--color-gold);
+  padding: 1rem 2rem;
+  font-size: 0.9375rem;
+}
+
+.btn-hero-primary:hover {
+  background-color: var(--color-gold-dark);
+  border-color: var(--color-gold-dark);
+}
+
+.btn-hero-secondary {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.6);
+  padding: 1rem 2rem;
+  font-size: 0.9375rem;
+}
+
+.btn-hero-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--color-white);
+}
+
+/* ── Container ─────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* ── Responsive Typography ─────────────────────────────── */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.75rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+}

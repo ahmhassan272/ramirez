@@ -1,0 +1,105 @@
+/* ═══════════════════════════════════════════════════════════
+   AboutUs — Harbor Elegance
+   2-column layout with image and text
+   ═══════════════════════════════════════════════════════════ */
+
+.section {
+  position: relative;
+  background-color: var(--color-white);
+  padding: var(--space-3xl) 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+/* ── Image Column ──────────────────────────────────────── */
+.imageColumn {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 10px 30px var(--color-shadow);
+  display: block;
+}
+
+/* ── Text Column ───────────────────────────────────────── */
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.accentLine {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gold-light), var(--color-gold), var(--color-gold-light));
+  border-radius: 2px;
+  margin-bottom: var(--space-md);
+}
+
+.title {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-lg);
+}
+
+.description {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  color: var(--color-navy-muted);
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .textColumn {
+    order: -1; /* Text above image on mobile */
+    text-align: center;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    text-align: left; /* Keep description left aligned even if title is centered */
+  }
+}

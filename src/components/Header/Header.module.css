@@ -1,0 +1,355 @@
+/* ═══════════════════════════════════════════════════════════
+   Header — Harbor Elegance
+   Sticky header with scroll-aware shadow, language toggle,
+   desktop nav, and mobile hamburger slide-in.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Header Shell ──────────────────────────────────────── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--header-height);
+  background-color: rgba(253, 251, 247, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow 300ms ease, border-color 300ms ease, background-color 300ms ease;
+}
+
+.scrolled {
+  background-color: rgba(253, 251, 247, 0.97);
+  border-bottom-color: var(--color-border);
+  box-shadow: 0 2px 20px var(--color-shadow);
+}
+
+/* ── Inner Container ───────────────────────────────────── */
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* ── Logo ──────────────────────────────────────────────── */
+.logo {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: color 200ms ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoImage {
+  height: 80px; /* md:h-20 */
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    max-width: 70%;
+  }
+  .logoImage {
+    height: 40px; /* h-10 */
+  }
+}
+
+.logo:hover {
+  color: var(--color-gold);
+}
+
+/* ── Desktop Nav ───────────────────────────────────────── */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.navLink {
+  position: relative;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-navy);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  transition: color 200ms ease;
+}
+
+/* Gold underline slides in from left on hover */
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-gold);
+  transition: width 250ms ease;
+}
+
+.navLink:hover {
+  color: var(--color-gold);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* ── Desktop Actions (lang + CTA) ──────────────────────── */
+.desktopActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+/* ── Language Toggle ───────────────────────────────────── */
+.langToggle {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.langBtn {
+  background: none;
+  border: none;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-navy-muted);
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  padding: 0.375rem 0.5rem;
+  border-radius: 4px;
+  transition: color 200ms ease, background-color 200ms ease;
+}
+
+.langBtn:hover {
+  color: var(--color-navy);
+  background-color: rgba(27, 42, 74, 0.05);
+}
+
+.langBtnActive {
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.langBtnActive:hover {
+  color: var(--color-gold-dark);
+}
+
+.langSeparator {
+  color: var(--color-border);
+  font-size: 0.8125rem;
+  user-select: none;
+  margin: 0 0.125rem;
+}
+
+/* ── CTA Button ────────────────────────────────────────── */
+.ctaBtn {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.8125rem;
+}
+
+/* ── Hamburger ─────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--border-radius);
+  transition: background-color 200ms ease;
+  z-index: 1010;
+}
+
+.hamburger:hover {
+  background-color: rgba(27, 42, 74, 0.05);
+}
+
+.hamburgerLine {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-navy);
+  border-radius: 2px;
+  transition: transform 300ms ease, opacity 200ms ease;
+  transform-origin: center;
+}
+
+/* Hamburger → X animation */
+.hamburgerOpen .hamburgerLine:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile Overlay ────────────────────────────────────── */
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background-color: rgba(27, 42, 74, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+.mobileOverlayOpen {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ── Mobile Menu Panel ─────────────────────────────────── */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 950;
+  width: min(85vw, 380px);
+  height: 100dvh;
+  background-color: var(--color-ivory);
+  box-shadow: -8px 0 30px rgba(27, 42, 74, 0.12);
+  transform: translateX(100%);
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+
+.mobileMenuOpen {
+  transform: translateX(0);
+}
+
+.mobileMenuInner {
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--header-height) + var(--space-xl)) var(--space-xl) var(--space-xl);
+  min-height: 100%;
+}
+
+/* ── Mobile Links ──────────────────────────────────────── */
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: var(--space-2xl);
+}
+
+.mobileLink {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  text-decoration: none;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: color 200ms ease;
+}
+
+.mobileLink:hover {
+  color: var(--color-gold);
+}
+
+.mobileLink:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Mobile Language Section ───────────────────────────── */
+.mobileLangSection {
+  margin-bottom: var(--space-xl);
+}
+
+.mobileLangLabel {
+  display: block;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-navy-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.mobileLangToggle {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.mobileLangBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.625rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-white);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-navy);
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.mobileLangBtn:hover {
+  border-color: var(--color-gold-light);
+  background: var(--color-ivory-warm);
+}
+
+.mobileLangBtnActive {
+  border-color: var(--color-gold);
+  background: rgba(200, 169, 81, 0.08);
+  color: var(--color-gold-dark);
+  font-weight: 600;
+}
+
+.mobileLangFlag {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ── Mobile CTA ────────────────────────────────────────── */
+.mobileCta {
+  width: 100%;
+  justify-content: center;
+  padding: 1rem;
+  margin-top: auto;
+  font-size: 0.9375rem;
+}
+
+/* ── Responsive Breakpoints ────────────────────────────── */
+@media (max-width: 768px) {
+  .desktopNav,
+  .desktopActions {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
