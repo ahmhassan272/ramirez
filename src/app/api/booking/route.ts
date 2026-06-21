@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     // ── Email Notification ──────────────────────────────
     
     // 1. Internal Notification Email
-    await resend.emails.send({
+    const internalResponse = await resend.emails.send({
       from: 'Ramirez Reservations <onboarding@resend.dev>',
       to: ['szaraz.vivien0601@gmail.com', 'ramirezsiofok11@gmail.com', 'ahmhassan272@gmail.com'],
       subject: `Új Foglalás / New Booking: ${name} — ${date} @ ${time}`,
@@ -43,10 +43,18 @@ export async function POST(request: Request) {
       `,
     });
 
+    if (internalResponse.error) {
+      console.error('Resend API Error (Internal Email):', internalResponse.error);
+      return NextResponse.json(
+        { success: false, message: 'Failed to send internal notification email.' },
+        { status: 500 }
+      );
+    }
+
     // 2. Customer Confirmation Email
     // Note: To send emails to arbitrary addresses (like customer emails), 
     // you must verify a domain in Resend and update the 'from' address below.
-    await resend.emails.send({
+    const customerResponse = await resend.emails.send({
       from: 'Ramirez Étterem <onboarding@resend.dev>',
       to: email,
       subject: `Foglalás Megerősítése / Reservation Received - Ramirez Éttermek`,
@@ -65,6 +73,14 @@ export async function POST(request: Request) {
         </div>
       `,
     });
+
+    if (customerResponse.error) {
+      console.error('Resend API Error (Customer Email):', customerResponse.error);
+      return NextResponse.json(
+        { success: false, message: 'Failed to send customer confirmation email.' },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json(
       {
