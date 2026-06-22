@@ -84,7 +84,7 @@ export async function POST(request: Request) {
     // 1. Internal Notification Email
     const internalResponse = await resend.emails.send({
       from: 'reservations@ramirezrestaurant.hu',
-      to: ['szaraz.vivien0601@gmail.com', 'ramirezsiofok11@gmail.com', 'ahmhassan272@gmail.com'],
+      to: ['szaraz.vivien0601@gmail.com', 'ramirezsiofok11@gmail.com'],
       subject: `Új Foglalás / New Booking: ${name} — ${date} @ ${time}`,
       html: `
         <h2>Új Asztalfoglalás / New Reservation Request</h2>

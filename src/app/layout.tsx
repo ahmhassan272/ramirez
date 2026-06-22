@@ -26,11 +26,11 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Ramirez Éttermek Siófok | Premium Restaurant by the Harbor",
+  title: "Ramirez Éttermek Siófok",
   description: "Experience classical elegance at Ramirez Restaurants in Siófok. Enjoy international cuisine, traditional Hungarian dishes, Gyros specialties, and oven-baked pizzas.",
   keywords: ['restaurant Siófok', 'Lake Balaton dining', 'Hungarian food', 'Ramirez Premium', 'pizza Siófok'],
   openGraph: {
-    title: 'Ramirez Éttermek Siófok | Premium Restaurant by the Harbor',
+    title: 'Ramirez Éttermek Siófok',
     description: 'Experience classical elegance at Ramirez Restaurants in Siófok. Enjoy international cuisine, traditional Hungarian dishes, Gyros specialties, and oven-baked pizzas.',
     url: 'https://ramirezrestaurant.hu',
     siteName: 'Ramirez Éttermek',
