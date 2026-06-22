@@ -101,7 +101,7 @@ export async function GET(request: Request) {
         `;
 
         await resend.emails.send({
-          from: 'onboarding@resend.dev',
+          from: 'reservations@ramirezrestaurant.hu',
           to: 'ahmhassan272@gmail.com', // Using the test email to comply with Sandbox limits during testing
           subject: 'Értékelje a látogatását / Review your visit - Ramirez Éttermek',
           html: emailHtml,

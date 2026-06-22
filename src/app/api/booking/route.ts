@@ -83,7 +83,7 @@ export async function POST(request: Request) {
 
     // 1. Internal Notification Email
     const internalResponse = await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'reservations@ramirezrestaurant.hu',
       to: ['szaraz.vivien0601@gmail.com', 'ramirezsiofok11@gmail.com', 'ahmhassan272@gmail.com'],
       subject: `Új Foglalás / New Booking: ${name} — ${date} @ ${time}`,
       html: `
@@ -106,7 +106,7 @@ export async function POST(request: Request) {
 
     // 2. Customer Confirmation Email
     const customerResponse = await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'reservations@ramirezrestaurant.hu',
       to: email, // Reverting to original customer email
       subject: `Foglalás Megerősítése / Reservation Received - Ramirez Éttermek`,
       html: `
