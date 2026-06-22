@@ -29,8 +29,18 @@ const LOCATIONS = {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    // Use 'restaurant' from the form body to map to 'restaurantSelection'
-    const { name, email, phone, guests, date, time, restaurant } = body;
+    
+    // Explicitly define the expected payload type
+    const { name, email, phone, guests, date, time, restaurant } = body as {
+      name: string;
+      email: string;
+      phone?: string;
+      guests: string | number;
+      date: string;
+      time: string;
+      restaurant: string;
+    };
+    
     const locationKey = restaurant as keyof typeof LOCATIONS;
 
     // Validation
@@ -142,10 +152,10 @@ export async function POST(request: Request) {
       },
       { status: 200 }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error('Booking API error:', error);
     return NextResponse.json(
-      { success: false, message: 'Internal server error.' },
+      { success: false, message: 'Internal server error.', error: error?.message || 'Unknown error' },
       { status: 500 }
     );
   }
