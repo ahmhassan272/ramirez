@@ -65,7 +65,7 @@ export default function Menu() {
               Ramirez Premium Menu
             </a>
             <a href="/Ramirez-ETLAP_2025.02.25_OK_web.pdf" target="_blank" rel="noopener noreferrer" className={`btn btn-primary ${styles.pdfButton}`}>
-              Ramirez Étterem Menu
+              Ramirez Éttermek Menu
             </a>
             <a href="/halasetlap.jpg" target="_blank" rel="noopener noreferrer" className={`btn btn-primary ${styles.pdfButton}`}>
               Ramirez Halászlé Menu

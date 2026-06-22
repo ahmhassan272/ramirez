@@ -51,7 +51,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className={styles.content}>
-        <p className={styles.overline}>Ramirez Étterem Siófok</p>
+        <p className={styles.overline}>Ramirez Éttermek Siófok</p>
         
         {/* Decorative accent line */}
         <div className={styles.accentLine} aria-hidden="true" />

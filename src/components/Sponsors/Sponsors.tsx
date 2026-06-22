@@ -37,6 +37,12 @@ export default function Sponsors() {
               className={`${styles.logo} cursor-pointer h-32 md:h-48 w-auto object-contain`} 
               onClick={() => setActiveImage('/partner3.jpg')}
             />
+            <img 
+              src="/partner4.jpg" 
+              alt="Sponsor 4" 
+              className={`${styles.logo} cursor-pointer h-32 md:h-48 w-auto object-contain`} 
+              onClick={() => setActiveImage('/partner4.jpg')}
+            />
           </div>
         </div>
       </section>
