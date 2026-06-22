@@ -6,7 +6,6 @@ import AboutUs from '@/components/AboutUs/AboutUs';
 import Menu from '@/components/Menu/Menu';
 import BookingForm from '@/components/BookingForm/BookingForm';
 import Footer from '@/components/Footer/Footer';
-import Awards from '@/components/Awards/Awards';
 import Sponsors from '@/components/Sponsors/Sponsors';
 
 export default function Home() {
@@ -44,7 +43,6 @@ export default function Home() {
         <InteractiveGallery />
         <BookingForm />
       </main>
-      <Awards />
       <Sponsors />
       <Footer />
     </>
