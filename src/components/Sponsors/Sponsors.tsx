@@ -18,29 +18,29 @@ export default function Sponsors() {
             <div className={styles.accentLine} aria-hidden="true" />
             <h2 className={styles.title}>{title}</h2>
           </div>
-          <div className="grid grid-cols-2 gap-6 md:gap-12 py-8 px-4 w-full max-w-4xl mx-auto place-items-center">
+          <div className={`${styles.logosRow} flex flex-row flex-wrap justify-center items-center gap-12 md:gap-24 py-8`}>
             <img 
               src="/sponsor1.jpeg" 
               alt="Sponsor 1" 
-              className="w-full h-auto max-h-32 md:max-h-48 object-contain cursor-pointer transition-transform duration-300 hover:scale-105" 
+              className={`${styles.logo} cursor-pointer h-32 md:h-48 w-auto object-contain`} 
               onClick={() => setActiveImage('/sponsor1.jpeg')}
             />
             <img 
               src="/sponsor2.jpeg" 
               alt="Sponsor 2" 
-              className="w-full h-auto max-h-32 md:max-h-48 object-contain cursor-pointer transition-transform duration-300 hover:scale-105" 
+              className={`${styles.logo} cursor-pointer h-32 md:h-48 w-auto object-contain`} 
               onClick={() => setActiveImage('/sponsor2.jpeg')}
             />
             <img 
               src="/partner3.jpg" 
               alt="Sponsor 3" 
-              className="w-full h-auto max-h-32 md:max-h-48 object-contain cursor-pointer transition-transform duration-300 hover:scale-105" 
+              className={`${styles.logo} cursor-pointer h-32 md:h-48 w-auto object-contain`} 
               onClick={() => setActiveImage('/partner3.jpg')}
             />
             <img 
               src="/partner4.jpg" 
               alt="Sponsor 4" 
-              className="w-full h-auto max-h-32 md:max-h-48 object-contain cursor-pointer transition-transform duration-300 hover:scale-105" 
+              className={`${styles.logo} cursor-pointer h-32 md:h-48 w-auto object-contain`} 
               onClick={() => setActiveImage('/partner4.jpg')}
             />
           </div>
