@@ -18,29 +18,29 @@ export default function Sponsors() {
             <div className={styles.accentLine} aria-hidden="true" />
             <h2 className={styles.title}>{title}</h2>
           </div>
-          <div className={`${styles.logosRow} flex flex-row flex-wrap justify-center items-center gap-12 md:gap-24 py-8`}>
+          <div className={`${styles.logosRow} grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-8 items-center justify-items-center`}>
             <img 
               src="/sponsor1.jpeg" 
               alt="Sponsor 1" 
-              className={`${styles.logo} cursor-pointer h-32 md:h-48 w-auto object-contain`} 
+              className={`${styles.logo} cursor-pointer w-full h-auto object-contain max-h-32 md:max-h-48`} 
               onClick={() => setActiveImage('/sponsor1.jpeg')}
             />
             <img 
               src="/sponsor2.jpeg" 
               alt="Sponsor 2" 
-              className={`${styles.logo} cursor-pointer h-32 md:h-48 w-auto object-contain`} 
+              className={`${styles.logo} cursor-pointer w-full h-auto object-contain max-h-32 md:max-h-48`} 
               onClick={() => setActiveImage('/sponsor2.jpeg')}
             />
             <img 
               src="/partner3.jpg" 
               alt="Sponsor 3" 
-              className={`${styles.logo} cursor-pointer h-32 md:h-48 w-auto object-contain`} 
+              className={`${styles.logo} cursor-pointer w-full h-auto object-contain max-h-32 md:max-h-48`} 
               onClick={() => setActiveImage('/partner3.jpg')}
             />
             <img 
               src="/partner4.jpg" 
               alt="Sponsor 4" 
-              className={`${styles.logo} cursor-pointer h-32 md:h-48 w-auto object-contain`} 
+              className={`${styles.logo} cursor-pointer w-full h-auto object-contain max-h-32 md:max-h-48`} 
               onClick={() => setActiveImage('/partner4.jpg')}
             />
           </div>
