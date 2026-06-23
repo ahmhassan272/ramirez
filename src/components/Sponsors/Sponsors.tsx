@@ -18,19 +18,31 @@ export default function Sponsors() {
             <div className={styles.accentLine} aria-hidden="true" />
             <h2 className={styles.title}>{title}</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto px-4 items-center justify-items-center">
-            <div className="w-full flex justify-center">
-              <img src="/sponsor1.jpeg" alt="Sponsor 1" className="max-w-full h-auto object-contain rounded-md shadow-sm cursor-pointer" onClick={() => setActiveImage('/sponsor1.jpeg')} />
-            </div>
-            <div className="w-full flex justify-center">
-              <img src="/sponsor2.jpeg" alt="Sponsor 2" className="max-w-full h-auto object-contain rounded-md shadow-sm cursor-pointer" onClick={() => setActiveImage('/sponsor2.jpeg')} />
-            </div>
-            <div className="w-full flex justify-center">
-              <img src="/partner3.jpg" alt="Partner 3" className="max-w-full h-auto object-contain rounded-md shadow-sm cursor-pointer" onClick={() => setActiveImage('/partner3.jpg')} />
-            </div>
-            <div className="w-full flex justify-center">
-              <img src="/partner4.jpg" alt="Partner 4" className="max-w-full h-auto object-contain rounded-md shadow-sm cursor-pointer" onClick={() => setActiveImage('/partner4.jpg')} />
-            </div>
+          <div className={`${styles.logosRow} grid grid-cols-2 gap-4 max-w-md mx-auto py-8 items-center justify-items-center`}>
+            <img 
+              src="/sponsor1.jpeg" 
+              alt="Sponsor 1" 
+              className={`${styles.logo} cursor-pointer h-24 md:h-32 w-auto object-contain`} 
+              onClick={() => setActiveImage('/sponsor1.jpeg')}
+            />
+            <img 
+              src="/sponsor2.jpeg" 
+              alt="Sponsor 2" 
+              className={`${styles.logo} cursor-pointer h-24 md:h-32 w-auto object-contain`} 
+              onClick={() => setActiveImage('/sponsor2.jpeg')}
+            />
+            <img 
+              src="/partner3.jpg" 
+              alt="Sponsor 3" 
+              className={`${styles.logo} cursor-pointer h-24 md:h-32 w-auto object-contain`} 
+              onClick={() => setActiveImage('/partner3.jpg')}
+            />
+            <img 
+              src="/partner4.jpg" 
+              alt="Sponsor 4" 
+              className={`${styles.logo} cursor-pointer h-24 md:h-32 w-auto object-contain`} 
+              onClick={() => setActiveImage('/partner4.jpg')}
+            />
           </div>
         </div>
       </section>
