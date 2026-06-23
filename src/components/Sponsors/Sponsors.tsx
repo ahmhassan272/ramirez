@@ -22,25 +22,25 @@ export default function Sponsors() {
             <img 
               src="/sponsor1.jpeg" 
               alt="Sponsor 1" 
-              className={`${styles.logo} cursor-pointer h-32 md:h-48 w-auto object-contain`} 
+              className={`${styles.logo} cursor-pointer h-24 md:h-36 w-auto object-contain`} 
               onClick={() => setActiveImage('/sponsor1.jpeg')}
             />
             <img 
               src="/sponsor2.jpeg" 
               alt="Sponsor 2" 
-              className={`${styles.logo} cursor-pointer h-32 md:h-48 w-auto object-contain`} 
+              className={`${styles.logo} cursor-pointer h-24 md:h-36 w-auto object-contain`} 
               onClick={() => setActiveImage('/sponsor2.jpeg')}
             />
             <img 
               src="/partner3.jpg" 
               alt="Sponsor 3" 
-              className={`${styles.logo} cursor-pointer h-32 md:h-48 w-auto object-contain`} 
+              className={`${styles.logo} cursor-pointer h-24 md:h-36 w-auto object-contain`} 
               onClick={() => setActiveImage('/partner3.jpg')}
             />
             <img 
               src="/partner4.jpg" 
               alt="Sponsor 4" 
-              className={`${styles.logo} cursor-pointer h-32 md:h-48 w-auto object-contain`} 
+              className={`${styles.logo} cursor-pointer h-24 md:h-36 w-auto object-contain`} 
               onClick={() => setActiveImage('/partner4.jpg')}
             />
           </div>

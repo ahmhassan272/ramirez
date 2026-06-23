@@ -50,7 +50,7 @@
 }
 
 .logo {
-  height: 128px; /* h-32 */
+  height: 96px; /* h-24 */
   width: auto;
   object-fit: contain;
   cursor: pointer;
@@ -59,7 +59,7 @@
 
 @media (min-width: 768px) {
   .logo {
-    height: 192px; /* md:h-48 */
+    height: 144px; /* md:h-36 */
   }
 }
 
