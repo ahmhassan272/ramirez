@@ -18,39 +18,31 @@ export default function Sponsors() {
             <div className={styles.accentLine} aria-hidden="true" />
             <h2 className={styles.title}>{title}</h2>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-24 py-8 w-full max-w-7xl mx-auto px-4">
-            <div className="w-[40%] md:w-auto flex justify-center items-center">
-              <img 
-                src="/sponsor1.jpeg" 
-                alt="Sponsor 1" 
-                className={`${styles.logo} cursor-pointer !max-w-full !h-auto md:!w-auto md:!h-48 object-contain`} 
-                onClick={() => setActiveImage('/sponsor1.jpeg')}
-              />
-            </div>
-            <div className="w-[40%] md:w-auto flex justify-center items-center">
-              <img 
-                src="/sponsor2.jpeg" 
-                alt="Sponsor 2" 
-                className={`${styles.logo} cursor-pointer !max-w-full !h-auto md:!w-auto md:!h-48 object-contain`} 
-                onClick={() => setActiveImage('/sponsor2.jpeg')}
-              />
-            </div>
-            <div className="w-[40%] md:w-auto flex justify-center items-center">
-              <img 
-                src="/partner3.jpg" 
-                alt="Sponsor 3" 
-                className={`${styles.logo} cursor-pointer !max-w-full !h-auto md:!w-auto md:!h-48 object-contain`} 
-                onClick={() => setActiveImage('/partner3.jpg')}
-              />
-            </div>
-            <div className="w-[40%] md:w-auto flex justify-center items-center">
-              <img 
-                src="/partner4.jpg" 
-                alt="Sponsor 4" 
-                className={`${styles.logo} cursor-pointer !max-w-full !h-auto md:!w-auto md:!h-48 object-contain`} 
-                onClick={() => setActiveImage('/partner4.jpg')}
-              />
-            </div>
+          <div className="grid grid-cols-2 gap-6 md:gap-12 py-8 px-4 w-full max-w-4xl mx-auto place-items-center">
+            <img 
+              src="/sponsor1.jpeg" 
+              alt="Sponsor 1" 
+              className="w-full h-auto max-h-32 md:max-h-48 object-contain cursor-pointer transition-transform duration-300 hover:scale-105" 
+              onClick={() => setActiveImage('/sponsor1.jpeg')}
+            />
+            <img 
+              src="/sponsor2.jpeg" 
+              alt="Sponsor 2" 
+              className="w-full h-auto max-h-32 md:max-h-48 object-contain cursor-pointer transition-transform duration-300 hover:scale-105" 
+              onClick={() => setActiveImage('/sponsor2.jpeg')}
+            />
+            <img 
+              src="/partner3.jpg" 
+              alt="Sponsor 3" 
+              className="w-full h-auto max-h-32 md:max-h-48 object-contain cursor-pointer transition-transform duration-300 hover:scale-105" 
+              onClick={() => setActiveImage('/partner3.jpg')}
+            />
+            <img 
+              src="/partner4.jpg" 
+              alt="Sponsor 4" 
+              className="w-full h-auto max-h-32 md:max-h-48 object-contain cursor-pointer transition-transform duration-300 hover:scale-105" 
+              onClick={() => setActiveImage('/partner4.jpg')}
+            />
           </div>
         </div>
       </section>
