@@ -40,12 +40,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem; /* gap-12 */
+  gap: 1rem; /* gap-4 */
 }
 
 @media (min-width: 768px) {
   .logosRow {
-    gap: 6rem; /* md:gap-24 */
+    gap: 2rem; /* md:gap-8 */
   }
 }
 

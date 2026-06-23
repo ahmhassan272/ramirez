@@ -18,7 +18,7 @@ export default function Sponsors() {
             <div className={styles.accentLine} aria-hidden="true" />
             <h2 className={styles.title}>{title}</h2>
           </div>
-          <div className={`${styles.logosRow} flex flex-row flex-wrap justify-center items-center gap-12 md:gap-24 py-8`}>
+          <div className={`${styles.logosRow} flex flex-row flex-wrap justify-center items-center gap-4 md:gap-8 py-8`}>
             <img 
               src="/sponsor1.jpeg" 
               alt="Sponsor 1" 
