@@ -42,7 +42,7 @@ export default function Menu() {
           <a href="/halasetlap.jpg" target="_blank" rel="noopener noreferrer" className={`btn btn-primary ${styles.pdfButton}`}>
             Ramirez Halászlé Menu
           </a>
-          <a href="/menu4.pdf" target="_blank" rel="noopener noreferrer" className={`btn btn-primary ${styles.pdfButton}`}>
+          <a href="/menu4.pdf?v=2" target="_blank" rel="noopener noreferrer" className={`btn btn-primary ${styles.pdfButton}`}>
             Ramirez Prémium Cukrászda
           </a>
         </div>
