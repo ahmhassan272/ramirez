@@ -59,6 +59,7 @@ export default function Header() {
             <img src="/ramirez-logo.png" alt="Ramirez Logo 1" className={`${styles.logoImage} h-10 md:h-20 w-auto`} />
             <img src="/logo2.png" alt="Ramirez Logo 2" className={`${styles.logoImage} h-10 md:h-20 w-auto`} />
             <img src="/logo3.png" alt="Ramirez Logo 3" className={`${styles.logoImage} h-10 md:h-20 w-auto`} />
+            <img src="/logo4.png" alt="Ramirez Logo 4" className={`${styles.logoImage} h-10 md:h-20 w-auto`} />
           </a>
 
           {/* Desktop Navigation */}
