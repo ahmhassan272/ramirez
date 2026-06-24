@@ -11,6 +11,7 @@ export default function AboutUs() {
 
   return (
     <section className={styles.section} id="about">
+      <title>{`${title} - Ramirez Éttermek Siófok`}</title>
       <div className={styles.container}>
         <div className={styles.grid}>
           {/* Column 1: Image */}

@@ -678,8 +678,9 @@
         ]
       }
     ],
-    "disclaimer": "Auf Ihre Rechnung wird ein Serviceaufschlag von 12% erhoben.",
-    "originalMenusTitle": "Unsere Original-Speisekarten"
+    "disclaimer": "Ein Servicezuschlag von 12% wird auf Ihre Endrechnung aufgeschlagen.",
+    "originalMenusTitle": "Unsere Originalmenüs",
+    "comingSoon": "Demnächst"
   },
   "hero": {
     "headline": "Klassische Eleganz im Herzen des Hafens von Siófok",
@@ -706,7 +707,7 @@
     "selectRestaurant": "Restaurant auswählen"
   },
   "footer": {
-    "tagline": "Klassische Eleganz Siófok",
+    "tagline": "Klassische Eleganz in Siófok",
     "hours": "Öffnungszeiten",
     "hoursValue": "Täglich: 09:00 – 24:00",
     "address": "Adresse",

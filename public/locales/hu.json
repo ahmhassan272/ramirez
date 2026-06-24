@@ -678,8 +678,9 @@
         ]
       }
     ],
-    "disclaimer": "A végszámlához 12% szervizdíj kerül felszámításra.",
-    "originalMenusTitle": "Eredeti étlapjaink"
+    "disclaimer": "A végső számlához 12% szervízdíjat számítunk fel.",
+    "originalMenusTitle": "Eredeti étlapok",
+    "comingSoon": "Hamarosan"
   },
   "hero": {
     "headline": "Klasszikus Elegancia Siófok Kikötőjének Szívében",
@@ -706,7 +707,7 @@
     "selectRestaurant": "Válasszon éttermet"
   },
   "footer": {
-    "tagline": "Klasszikus elegancia Siófok",
+    "tagline": "Klasszikus elegancia Siófokon",
     "hours": "Nyitvatartás",
     "hoursValue": "Naponta: 09:00 – 24:00",
     "address": "Cím",

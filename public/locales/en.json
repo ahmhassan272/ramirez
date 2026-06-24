@@ -679,7 +679,8 @@
       }
     ],
     "disclaimer": "A 12% service charge will be added to your final bill.",
-    "originalMenusTitle": "Our Original Menus"
+    "originalMenusTitle": "Our Original Menus",
+    "comingSoon": "Coming soon"
   },
   "hero": {
     "headline": "Classical Elegance in the Heart of Siófok Harbor",
@@ -706,7 +707,7 @@
     "selectRestaurant": "Select Restaurant"
   },
   "footer": {
-    "tagline": "Classic elegance Siófok",
+    "tagline": "Classic elegance in Siófok",
     "hours": "Opening Hours",
     "hoursValue": "Daily: 09:00 – 24:00",
     "address": "Address",
