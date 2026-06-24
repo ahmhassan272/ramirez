@@ -35,6 +35,7 @@ interface Translations {
     pageTitle: string;
     originalMenusTitle?: string;
     disclaimer?: string;
+    comingSoon?: string;
     categories: MenuCategory[];
   };
   hero?: {
