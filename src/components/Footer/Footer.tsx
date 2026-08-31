@@ -21,8 +21,9 @@ export default function Footer() {
             <div className={styles.brand}>
               <span className={styles.logo}>Ramirez</span>
               <p className={styles.tagline}>{t('footer.tagline')}</p>
-
-
+              <p className={styles.tagline} style={{ fontSize: '0.85em', opacity: 0.85, fontStyle: 'italic', marginTop: '1rem' }}>
+                {t('footer.seasonalDisclaimer')}
+              </p>
             </div>
 
             {/* Column 2 — Branch 1 */}
