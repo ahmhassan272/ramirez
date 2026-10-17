@@ -29,9 +29,11 @@ const LOCATIONS = {
 };
 
 export async function POST(request: Request) {
+  let customerPayload: { Name?: string; Time?: string; Date?: string; [key: string]: any } = {};
+
   try {
     const body = await request.json();
-    
+
     // Explicitly define the expected payload type
     const { name, email, phone, guests, date, time, restaurant } = body as {
       name: string;
@@ -42,7 +44,16 @@ export async function POST(request: Request) {
       time: string;
       restaurant: string;
     };
-    
+
+    customerPayload = {
+      Name: name,
+      Time: time,
+      Date: date,
+      email,
+      restaurant,
+      guests,
+    };
+
     const locationKey = restaurant as keyof typeof LOCATIONS;
 
     // Validation
@@ -63,88 +74,182 @@ export async function POST(request: Request) {
 
     const locationDetails = LOCATIONS[locationKey];
 
-    // Database Logging
-    // Use a dummy connection test if the database URL isn't configured for local development
-    if (process.env.DATABASE_URL) {
-      await prisma.reservation.create({
-        data: {
-          restaurant: locationKey,
-          name,
-          email,
-          phone: phone || null,
-          guests: String(guests),
-          date,
-          time,
-        }
+    // ── Task 1 & 2: Isolated Database Write ─────────────────────────────
+    try {
+      if (process.env.DATABASE_URL) {
+        await prisma.reservation.create({
+          data: {
+            restaurant: locationKey,
+            name,
+            email,
+            phone: phone || null,
+            guests: String(guests),
+            date,
+            time,
+          },
+        });
+      } else {
+        console.warn("DATABASE_URL is not set. Skipping Prisma DB insert.");
+      }
+    } catch (dbError: any) {
+      const errorMessage = dbError instanceof Error ? dbError.message : String(dbError);
+      const stackTrace = dbError instanceof Error ? dbError.stack : 'No stack trace available';
+
+      console.error(
+        `🚨 [VERCEL LOG] PRISMA DATABASE WRITE FAILED:\n` +
+        `Error Message: ${errorMessage}\n` +
+        `Stack Trace:\n${stackTrace}\n` +
+        `Customer Payload: Name: "${name}", Time: "${time}", Date: "${date}"`
+      );
+      console.error('[PRISMA_DB_ERROR_CONTEXT]', {
+        errorMessage,
+        stack: stackTrace,
+        customerPayload: {
+          Name: name,
+          Time: time,
+          Date: date,
+        },
       });
-    } else {
-      console.warn("DATABASE_URL is not set. Skipping Prisma DB insert.");
+
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Server busy, please try again or call the restaurant directly.',
+          error: errorMessage,
+        },
+        { status: 500 }
+      );
     }
 
-    // 1. Internal Notification Email
-    const internalResponse = await resend.emails.send({
-      from: 'reservations@ramirezrestaurant.hu',
-      to: ['szaraz.vivien0601@gmail.com', 'ramirezsiofok11@gmail.com'],
-      subject: `Új Foglalás / New Booking: ${name} — ${date} @ ${time}`,
-      html: `
-        <h2>Új Asztalfoglalás / New Reservation Request</h2>
-        <p><strong>Étterem / Location:</strong> ${locationDetails.name}</p>
-        <p><strong>Cím / Address:</strong> ${locationDetails.address}</p>
-        <p><strong>Név / Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Telefon / Phone:</strong> ${phone || '—'}</p>
-        <p><strong>Vendégek / Guests:</strong> ${guests}</p>
-        <p><strong>Dátum / Date:</strong> ${date}</p>
-        <p><strong>Időpont / Time:</strong> ${time}</p>
-      `,
-    });
+    // ── Task 1 & 2: Isolated Resend Email Transmission ──────────────────
+    // If the database write succeeded, email failure MUST NOT crash the system
+    // or return an error to the user. The table is booked, so return success to user.
+    try {
+      // 1. Internal Notification Email
+      try {
+        const internalResponse = await resend.emails.send({
+          from: 'reservations@ramirezrestaurant.hu',
+          to: ['szaraz.vivien0601@gmail.com', 'ramirezsiofok11@gmail.com'],
+          subject: `Új Foglalás / New Booking: ${name} — ${date} @ ${time}`,
+          html: `
+            <h2>Új Asztalfoglalás / New Reservation Request</h2>
+            <p><strong>Étterem / Location:</strong> ${locationDetails.name}</p>
+            <p><strong>Cím / Address:</strong> ${locationDetails.address}</p>
+            <p><strong>Név / Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Telefon / Phone:</strong> ${phone || '—'}</p>
+            <p><strong>Vendégek / Guests:</strong> ${guests}</p>
+            <p><strong>Dátum / Date:</strong> ${date}</p>
+            <p><strong>Időpont / Time:</strong> ${time}</p>
+          `,
+        });
 
-    if (internalResponse.error) {
-      console.error("🔥 RESEND API ERROR:", internalResponse.error);
-      return NextResponse.json({ error: internalResponse.error.message }, { status: 500 });
-    }
+        if (internalResponse.error) {
+          throw new Error(internalResponse.error.message || JSON.stringify(internalResponse.error));
+        }
+      } catch (internalError: any) {
+        const errorMessage = internalError instanceof Error ? internalError.message : String(internalError);
+        const stackTrace = internalError instanceof Error ? internalError.stack : 'No stack trace available';
 
-    // 2. Customer Confirmation Email
-    const customerResponse = await resend.emails.send({
-      from: 'reservations@ramirezrestaurant.hu',
-      to: email, // Reverting to original customer email
-      subject: `Foglalás Megerősítése / Reservation Received - Ramirez Éttermek`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1b2a4a;">
-          <h2 style="color: #c8a951;">Kedves / Dear / Lieber ${name},</h2>
-          
-          <!-- HUNGARIAN -->
-          <p>Köszönjük a foglalását a <strong>${locationDetails.name}</strong> étterembe!</p>
-          <p>Hamarosan felvesszük Önnel a kapcsolatot a foglalás megerősítéséhez.</p>
-          <p><strong>Cím:</strong> ${locationDetails.address}</p>
+        console.error(
+          `🚨 [VERCEL LOG] RESEND INTERNAL NOTIFICATION EMAIL FAILED:\n` +
+          `Error Message: ${errorMessage}\n` +
+          `Stack Trace:\n${stackTrace}\n` +
+          `Customer Payload: Name: "${name}", Time: "${time}", Date: "${date}"`
+        );
+        console.error('[RESEND_INTERNAL_EMAIL_ERROR_CONTEXT]', {
+          errorMessage,
+          stack: stackTrace,
+          customerPayload: {
+            Name: name,
+            Time: time,
+            Date: date,
+          },
+        });
+      }
 
-          <hr style="border: 0; border-top: 1px solid #e0e0e0; margin: 20px 0;" />
+      // 2. Customer Confirmation Email
+      try {
+        const customerResponse = await resend.emails.send({
+          from: 'reservations@ramirezrestaurant.hu',
+          to: email, // Reverting to original customer email
+          subject: `Foglalás Megerősítése / Reservation Received - Ramirez Éttermek`,
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1b2a4a;">
+              <h2 style="color: #c8a951;">Kedves / Dear / Lieber ${name},</h2>
+              
+              <!-- HUNGARIAN -->
+              <p>Köszönjük a foglalását a <strong>${locationDetails.name}</strong> étterembe!</p>
+              <p>Hamarosan felvesszük Önnel a kapcsolatot a foglalás megerősítéséhez.</p>
+              <p><strong>Cím:</strong> ${locationDetails.address}</p>
 
-          <!-- ENGLISH -->
-          <p>Thank you for your reservation request at <strong>${locationDetails.name}</strong>!</p>
-          <p>We will contact you shortly to confirm your booking.</p>
-          <p><strong>Address:</strong> ${locationDetails.address}</p>
+              <hr style="border: 0; border-top: 1px solid #e0e0e0; margin: 20px 0;" />
 
-          <hr style="border: 0; border-top: 1px solid #e0e0e0; margin: 20px 0;" />
+              <!-- ENGLISH -->
+              <p>Thank you for your reservation request at <strong>${locationDetails.name}</strong>!</p>
+              <p>We will contact you shortly to confirm your booking.</p>
+              <p><strong>Address:</strong> ${locationDetails.address}</p>
 
-          <!-- GERMAN -->
-          <p>Vielen Dank für Ihre Reservierungsanfrage bei <strong>${locationDetails.name}</strong>!</p>
-          <p>Wir werden uns in Kürze mit Ihnen in Verbindung setzen, um Ihre Buchung zu bestätigen.</p>
-          <p><strong>Adresse:</strong> ${locationDetails.address}</p>
+              <hr style="border: 0; border-top: 1px solid #e0e0e0; margin: 20px 0;" />
 
-          <div style="background-color: #fdfbf7; padding: 20px; border-left: 4px solid #c8a951; margin: 20px 0;">
-            <p style="margin: 5px 0;"><strong>Dátum / Date / Datum:</strong> ${date}</p>
-            <p style="margin: 5px 0;"><strong>Időpont / Time / Zeit:</strong> ${time}</p>
-            <p style="margin: 5px 0;"><strong>Vendégek / Guests / Gäste:</strong> ${guests}</p>
-          </div>
-          <p>Üdvözlettel / Best regards / Mit freundlichen Grüßen,<br><strong>Ramirez Éttermek Siófok</strong></p>
-        </div>
-      `,
-    });
+              <!-- GERMAN -->
+              <p>Vielen Dank für Ihre Reservierungsanfrage bei <strong>${locationDetails.name}</strong>!</p>
+              <p>Wir werden uns in Kürze mit Ihnen in Verbindung setzen, um Ihre Buchung zu bestätigen.</p>
+              <p><strong>Adresse:</strong> ${locationDetails.address}</p>
 
-    if (customerResponse.error) {
-      console.error("🔥 RESEND API ERROR:", customerResponse.error);
-      return NextResponse.json({ error: customerResponse.error.message }, { status: 500 });
+              <div style="background-color: #fdfbf7; padding: 20px; border-left: 4px solid #c8a951; margin: 20px 0;">
+                <p style="margin: 5px 0;"><strong>Dátum / Date / Datum:</strong> ${date}</p>
+                <p style="margin: 5px 0;"><strong>Időpont / Time / Zeit:</strong> ${time}</p>
+                <p style="margin: 5px 0;"><strong>Vendégek / Guests / Gäste:</strong> ${guests}</p>
+              </div>
+              <p>Üdvözlettel / Best regards / Mit freundlichen Grüßen,<br><strong>Ramirez Éttermek Siófok</strong></p>
+            </div>
+          `,
+        });
+
+        if (customerResponse.error) {
+          throw new Error(customerResponse.error.message || JSON.stringify(customerResponse.error));
+        }
+      } catch (customerEmailError: any) {
+        const errorMessage = customerEmailError instanceof Error ? customerEmailError.message : String(customerEmailError);
+        const stackTrace = customerEmailError instanceof Error ? customerEmailError.stack : 'No stack trace available';
+
+        console.error(
+          `🚨 [VERCEL LOG] RESEND CUSTOMER CONFIRMATION EMAIL FAILED:\n` +
+          `Error Message: ${errorMessage}\n` +
+          `Stack Trace:\n${stackTrace}\n` +
+          `Customer Payload: Name: "${name}", Time: "${time}", Date: "${date}"`
+        );
+        console.error('[RESEND_CUSTOMER_EMAIL_ERROR_CONTEXT]', {
+          errorMessage,
+          stack: stackTrace,
+          customerPayload: {
+            Name: name,
+            Time: time,
+            Date: date,
+          },
+        });
+      }
+    } catch (emailError: any) {
+      const errorMessage = emailError instanceof Error ? emailError.message : String(emailError);
+      const stackTrace = emailError instanceof Error ? emailError.stack : 'No stack trace available';
+
+      console.error(
+        `🚨 [VERCEL LOG] RESEND EMAIL TRANSMISSION ERROR:\n` +
+        `Error Message: ${errorMessage}\n` +
+        `Stack Trace:\n${stackTrace}\n` +
+        `Customer Payload: Name: "${name}", Time: "${time}", Date: "${date}"`
+      );
+      console.error('[RESEND_EMAIL_ERROR_CONTEXT]', {
+        errorMessage,
+        stack: stackTrace,
+        customerPayload: {
+          Name: name,
+          Time: time,
+          Date: date,
+        },
+      });
+      // Email failure does NOT crash or fail the request because DB write succeeded.
     }
 
     return NextResponse.json(
@@ -155,9 +260,31 @@ export async function POST(request: Request) {
       { status: 200 }
     );
   } catch (error: any) {
-    console.error('Booking API error:', error);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    const stackTrace = error instanceof Error ? error.stack : 'No stack trace available';
+
+    console.error(
+      `🚨 [VERCEL LOG] BOOKING API ROUTE ERROR:\n` +
+      `Error Message: ${errorMessage}\n` +
+      `Stack Trace:\n${stackTrace}\n` +
+      `Customer Payload: Name: "${customerPayload.Name || 'N/A'}", Time: "${customerPayload.Time || 'N/A'}", Date: "${customerPayload.Date || 'N/A'}"`
+    );
+    console.error('[BOOKING_ROUTE_ERROR_CONTEXT]', {
+      errorMessage,
+      stack: stackTrace,
+      customerPayload: {
+        Name: customerPayload.Name || 'N/A',
+        Time: customerPayload.Time || 'N/A',
+        Date: customerPayload.Date || 'N/A',
+      },
+    });
+
     return NextResponse.json(
-      { success: false, message: 'Internal server error.', error: error?.message || 'Unknown error' },
+      {
+        success: false,
+        message: 'Server busy, please try again or call the restaurant directly.',
+        error: errorMessage,
+      },
       { status: 500 }
     );
   }

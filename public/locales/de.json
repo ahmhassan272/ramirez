@@ -703,6 +703,7 @@
     "successMessage": "Vielen Dank! Wir haben Ihre Reservierungsanfrage erhalten. Unser Team wird Ihre Reservierung in Kürze per E-Mail bestätigen.",
     "successBack": "Neue Reservierung",
     "errorMessage": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an.",
+    "serverBusy": "Server ausgelastet, bitte versuchen Sie es erneut oder rufen Sie das Restaurant direkt an.",
     "required": "Erforderlich",
     "selectRestaurant": "Restaurant auswählen"
   },

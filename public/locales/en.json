@@ -703,6 +703,7 @@
     "successMessage": "Thank you! We have received your booking request. Our team will confirm your reservation shortly via email.",
     "successBack": "Make Another Reservation",
     "errorMessage": "Something went wrong. Please try again or call us directly.",
+    "serverBusy": "Server busy, please try again or call the restaurant directly.",
     "required": "Required",
     "selectRestaurant": "Select Restaurant"
   },

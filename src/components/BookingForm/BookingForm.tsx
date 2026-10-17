@@ -30,6 +30,7 @@ export default function BookingForm() {
   });
 
   const [status, setStatus] = useState<FormStatus>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -43,29 +44,60 @@ export default function BookingForm() {
     async (e: FormEvent) => {
       e.preventDefault();
       setStatus('submitting');
+      setErrorMessage('');
+
+      // Create an AbortController with a 15-second timeout to prevent indefinite spinning on DB timeouts
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
 
       try {
         const res = await fetch('/api/booking', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(form),
+          signal: controller.signal,
         });
 
-        if (res.ok) {
+        clearTimeout(timeoutId);
+
+        let data: any = null;
+        try {
+          data = await res.json();
+        } catch {
+          data = null;
+        }
+
+        if (res.ok && data?.success !== false) {
           setStatus('success');
         } else {
           setStatus('error');
+          if (res.status >= 500) {
+            const busyText = t('booking.serverBusy');
+            setErrorMessage(
+              data?.message || (busyText && busyText !== 'booking.serverBusy' ? busyText : 'Server busy, please try again or call the restaurant directly.')
+            );
+          } else {
+            setErrorMessage(data?.message || t('booking.errorMessage'));
+          }
         }
       } catch {
+        clearTimeout(timeoutId);
         setStatus('error');
+        const busyText = t('booking.serverBusy');
+        setErrorMessage(
+          busyText && busyText !== 'booking.serverBusy'
+            ? busyText
+            : 'Server busy, please try again or call the restaurant directly.'
+        );
       }
     },
-    [form]
+    [form, t]
   );
 
   const resetForm = useCallback(() => {
     setForm({ restaurant: 'premium', name: '', email: '', phone: '', guests: '2', date: '', time: '19:00' });
     setStatus('idle');
+    setErrorMessage('');
   }, []);
 
   // Today's date for min attribute
@@ -249,13 +281,13 @@ export default function BookingForm() {
 
           {/* Error message */}
           {status === 'error' && (
-            <div className={styles.error}>
+            <div className={styles.error} role="alert">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <circle cx="12" cy="12" r="10" />
                 <line x1="15" y1="9" x2="9" y2="15" />
                 <line x1="9" y1="9" x2="15" y2="15" />
               </svg>
-              <span>{t('booking.errorMessage')}</span>
+              <span>{errorMessage || t('booking.errorMessage')}</span>
             </div>
           )}
 

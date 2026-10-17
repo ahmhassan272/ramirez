@@ -703,6 +703,7 @@
     "successMessage": "Köszönjük! Megkaptuk foglalási kérelmét. Csapatunk hamarosan e-mailben visszaigazolja a foglalást.",
     "successBack": "Új Foglalás",
     "errorMessage": "Hiba történt. Kérjük, próbálja újra, vagy hívjon minket közvetlenül.",
+    "serverBusy": "A szerver jelenleg foglalt, kérjük, próbálja újra később, vagy hívja közvetlenül az éttermet.",
     "required": "Kötelező",
     "selectRestaurant": "Válasszon éttermet"
   },
